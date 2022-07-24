@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>View Counter</title>
+
+	<style type="text/css">
+
+	  .countbox{
+	  	padding: 2px;
+	  }
+	  .fontbig{
+	  	text-align: center;
+	  	padding: 5px; 
+	  	border: 5px solid black; 
+	  	width: fit-content;
+	  }
+		 
+	</style>
+	
+</head>
+
+<body>
+
+	<p> Total Number of Count <span id = "display">0</span> times</p>
+	<button id="btn" onclick="addCount()" >+Count</button>
+	<div class="countbox">
+		<div class="count">
+			<div class="count-body">
+				<p></p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	var countin = 0;
+	var btn = document.getElementById("btn");
+	var disp = document.getElementById("display");
+
+	function addCount(){
+		countin++;
+		disp.innerHTML;
+
+		const countbox = document.querySelector('.countbox')
+
+		const newcount = document.createElement("DIV");
+		newcount.className = "count";
+
+		const newcountbody = document.createElement("DIV");
+		newcountbody.className = "count-body";
+
+		const newp = document.createElement("P");
+		newp.className = "fontbig";
+		newp.innerHTML = "COUNT " + countin;
+
+		countbox.appendChild(newcount);
+		newcount.appendChild(newcountbody);
+		newcountbody.appendChild(newp);
+
+	}
+	addCount();
+	setInterval(addCount,100);
+	
+	</script>
+
+</body>
+</html>
